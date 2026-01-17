@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing Users</title>
+    <style>
+        tr,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <% for(user of result){ %>
+            <tr>
+                <td>
+                    <%=user.id%>
+                </td>
+                <td>
+                    <%=user.username%>
+                </td>
+                <td>
+                    <%=user.email%>
+                </td>
+                <td>
+                    <!-- :id is written in index.js in html or ejs tag for variable is used  -->
+                    <form method="get" action="/users/<%=user.id%>/edit">
+                        <button>Edit UserName</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
