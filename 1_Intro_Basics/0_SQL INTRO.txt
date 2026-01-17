@@ -1,0 +1,38 @@
+databases is a collection of data in a format that can be easily accessible. 
+it has three porperties: i> stores data, ii> feautures like security and scalibilty iii> easier to insert update or delete data 
+SQL : realtional database -> (data stored in Tables)   eg. MySQL, Oracle, PostgreSQL  and  MongoDB, Cassandra, Neo4j
+NoSQL : non relational database -> (data stored in document/ key-val/ graphs, etc) 
+
+SQL : Stuctured Query Language : is a programming language used to interact with relational databases
+column: design(schema)
+row: tuple
+SQL is case insensitive
+
+/* 
+    database
+    CREATE DATABASE IF NOT EXISTS db_name     : is use dto create a databse
+    DROP DATABASE IF EXISTS db_name       : is used to dleete a pre existing database
+    USE db_name                 : to use a database it need to be specified (even before table creation it need to be mentioned)
+    SHOW DATABASES : is used to see all the databases
+    SHOW TABLES : is used to see all the tables of databases
+*/
+
+/*
+UNSIGNED: all the neagtive number goes to the positive numbers thus increasing the range of positive number
+
+/*
+NOT NULL : columns cannot have a null value
+UNIQUE : all values in column are different
+DEFAULT : sets the default value of a column
+CHECK : it can limit the values allowed in the column   (ex: CONSTRAINT age_check CHECK (age>=18 AND city="Delhi"))
+
+reverse engneering -> of databases is used to visualize the data
+PRIMARY KEY : it is a column(or set of columns in a table) that uniquely identifies each row. There is only 1 PK and it should be not null.
+FOREIGN KEY : it is a column (or set of columns) in a table that refers to the primary key of another table. it could have duplicate and null values. there can be multiple FKs.
+*/
+
+INSERT INTO tb_name VALUES (all column values)
+SELECT */column_name FROM table_name 
+
+
+
