@@ -1,0 +1,48 @@
+/*
+WHERE is use do add a condtion in sql select command
+*/
+/*
+Operator: 
+BETWEEN: Operator selects between the range
+IN: Operator checks where the column values matches which the collection (EX: SELECT * FROM user Where email(column_name) IN list(collection) )
+NOT : to neagate between the given condition
+*/
+
+Clauses:
+limit: sets an upper limit on number of (tuples) rows to be returned.
+Order By: to sort in increasing order or decreasing order
+
+Aggregate Functions : count, max, min, sum, avg
+
+/*
+Group by clause : Group rows that have same value into summary rows. It collects data from multiple records and groups the result by one or more column.
+Group by is generally used with aggregate funcions.
+SELECT col1, col2 FROM table_name GROUP BY col_name(s);
+Only those column could be selected which has been used in group by command else aggregate function could only be used with the group by function
+
+Having clause
+Similar to where it is used to appy conditions but after grouping   
+*/
+
+GENERAL ORDER : SELECT column(s) FROM table_name WHERE condition GROUP BY column(s)  HAVING condition ORDER BY column(s) ASC.
+
+/*  TABLE CHANGES
+Update(to update existing rows : ) -> UPDATE table_name SET col1=val1, col2=val2 WHERE condition;
+// Protection - MYSQL does not allow one to change the database therefore use -> SET SQL_SAFE_UPDATES = 0 (by default it is 1)
+*/
+
+/* ALTER TABLE
+    i>      ALTER TABLE table_name add COLUMN column_name datatype constraint.
+    ii>     ALTER TABLE table_name DROP COLUMN column_name
+    iii>    ALTER TABLE table_name RENAME TO new_table_name
+    iv>     ALTER TABLE table_name CHANGE COLUMN column_name new_column_name data_type constraint
+    v>      ALTER TABLE table_name MODIFY column_name data_type constraint
+*/
+
+/*
+TRUNCATE : TRUNCATE TABLE table_name    :-> is used to delete all the data of the table_name the template or schema of table still remains
+DROP :     DROP TABLE table_name   :->  is used to delete the entire table (so unlike truncate table does not exists even and further data could also not be added any more)
+*/
+
+
+
