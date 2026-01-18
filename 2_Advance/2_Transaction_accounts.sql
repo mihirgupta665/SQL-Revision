@@ -24,3 +24,23 @@ COMMIT;		-- at last the transaction need to be commited
 -- all the above transaction statement have becomes the one transaction as whole and is implemented together only.
 
 Select *  From accounts;
+
+-- rollback undo the uncommited changes of a transaction 
+
+Start transaction;
+UPDATE accounts SET balance = balance+100 where id=1;
+commit;
+UPDATE accounts SET balance = balance-100 where id=2;
+rollback;  -- the above only uncommited changes are restored.
+
+Select * FROM accounts;
+
+Start transaction;
+UPDATE accounts SET balance = balance - 1000 where id=1;
+SAVEPOINT wallet_toppup_successfull;  -- creating a savepoint with a name for that point
+UPDATE accounts SET balance = balance + 10 where id=1;
+ROLLBACK TO wallet_toppup_successfull;	-- rollback to savepoint
+
+commit;
+
+Select * FROM accounts;
